@@ -11,4 +11,5 @@ mkdir ./$1/Data
 mkdir ./$1/Docker
 mkdir ./$1/Images
 mkdir ./$1/Papers
+mkdir ./$1/Explanations
 touch ./$1/README.md
