@@ -10,4 +10,10 @@
 ```
 [文字列](リンク先)
 ```
-例 : [LAV & UniAD](./Explanations/LAV_UniAD.md)
+例 : [LAV & UniAD](../004_PLUTO//Explanations/LAV_UniAD.md)
+
+3. 画像を挿入
+```
+![代替テキスト](画像のパス)
+```
+例：![代替テキスト](../004_PLUTO/Images/fig_01.png)
