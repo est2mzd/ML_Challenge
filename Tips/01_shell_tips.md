@@ -24,3 +24,26 @@ source "$(dirname "$0")/common.sh"
 # dシンボリックリンクの作成
   - ln -s 本体 参照先
   - ln -s /Work/Data /Work/Project1/data
+
+
+# 引数
+
+#### 引数の説明
+echo "スクリプト名: $0"
+echo "1番目の引数: $1"
+echo "2番目の引数: $2"
+echo "全ての引数: $@"
+echo "引数の数: $#"
+
+
+#### 引数が存在するかのチェック:
+if [ $# -eq 0 ]; then
+    echo "引数がありません"
+    exit 1
+fi
+
+#### 引数のループ処理:
+for arg in "$@"
+do
+    echo "引数: $arg"
+done
