@@ -2,9 +2,9 @@
 
 1. 文字に色をつける
 ``` 
-<span style="color:red;"> xxx </span>
+<span style="color:red"> xxx </span>
 ```
-例 : <span style="color:red;"> xxx </span>
+例 : <span style="color:red"> xxx </span>
 
 2. リンクを貼る
 ```
