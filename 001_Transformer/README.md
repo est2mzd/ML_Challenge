@@ -83,7 +83,15 @@ Transformerは、従来のエンコーダ-デコーダアーキテクチャを�
 
 参考 : [fig1の詳細](./Explanations/fig_01_ver2.md)
 
+  [※ Attentionの式の意味の詳細](./Eq_Attention.md)
+
+  [※ Self Attention と Cross Attention の違い](./Diff_Self_Cross_Attention.md)
+
+  [※ Residual Connectionの効果](./Explanations/Residual_Connection.md)
+
 ![fig1](./Images/fig_01.png)
+
+
 
 ---
 
