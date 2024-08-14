@@ -54,7 +54,11 @@
   
 
   ```math
-  \text{FFN}(X) = \text{max}(0, XW_1 + b_1)W_2 + b_2
+  \text{FFN}(X) = \text{max}(0, XW_1 + b_1)W_2+b_2
+  ```
+
+  ```math
+  \text{FFN}(X) = \text{Concat}(\text{head}_1, \dots, \text{head}_h)W^O
   ```
 
 
