@@ -22,6 +22,11 @@
 
       ここで、$v_i$ は各ビューに対応する観察ビューラテント (Observed View Latents) です。
 
+      [ここで CrossAttention を使う理由](./TheReasonToUseCrossAttention.md)
+
+      [CrossAttentionの式の説明](./Exp_of_CrossAttention.md)
+
+
 3. **Temporal Aggregation**:
     - 前のフレーム $T-1$ からの歴史的ビューラテント $H$ を用いて、観察ビューラテント $V$ を強化し、強化されたビューラテント $E$ を生成します。
     - このプロセスは以下の数式で表されます：
