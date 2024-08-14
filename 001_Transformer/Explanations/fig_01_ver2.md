@@ -37,9 +37,9 @@
 - **説明**: 各マルチヘッド・アテンションの出力は、元の入力に対して残差接続（Residual Connection）を介して加算され、その後レイヤー正規化（Layer Normalization）が適用されます。このプロセスにより、勾配消失や勾配爆発を防ぎつつ、学習が安定化されます。
 
 - **数式**:
-  $$
+  ```math
   X_{\text{out}} = \text{LayerNorm}(X_{\text{input}}^{\text{pos}} + \text{MultiHead}(Q, K, V))
-  $$
+  ```
 
 ## 5. Feed Forward (フィードフォワード)
 - **説明**: 正規化された出力は次に、ポイントワイズ・フィードフォワードネットワーク（Feed Forward Network）に送られます。このネットワークは、各位置の入力に対して2つの線形変換とReLU活性化関数を適用します。
