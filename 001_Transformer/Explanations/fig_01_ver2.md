@@ -45,22 +45,9 @@
 - **説明**: 正規化された出力は次に、ポイントワイズ・フィードフォワードネットワーク（Feed Forward Network）に送られます。このネットワークは、各位置の入力に対して2つの線形変換とReLU活性化関数を適用します。
 
 - **数式**:
-
   ```math
   \text{FFN}(X) = \max(0, XW_1 + b_1)W_2 + b_2
   ```
-  
-  $$ \text{FFN}(X) = \max(0, XW_1 + b_1)W_2 + b_2 $$
-  
-
-  ```math
-  \text{FFN}(X) = \text{max}(0, XW_1 + b_1)W_2+b_2
-  ```
-
-  ```math
-  \text{FFN}(X) = \text{Concat}(\text{head}_1, \dots, \text{head}_h)W^O
-  ```
-
 
   ここで、$W_1$ と $W_2$ は重み行列、$b_1$ と $b_2$ はバイアス項です。
 
