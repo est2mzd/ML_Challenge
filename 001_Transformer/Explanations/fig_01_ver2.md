@@ -28,6 +28,11 @@
   ```math
   \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
   ```
+
+  [※ Attentionの式の意味の詳細](./Eq_Attention.md)
+
+  [※ Self Attention と Cross Attention の違い](./Diff_Self_Cross_Attention.md)
+
   マルチヘッド・アテンションの出力は、全てのヘッドの出力を結合し、最終的な線形変換を適用して得られます。
   ```math
   \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h)W^O
