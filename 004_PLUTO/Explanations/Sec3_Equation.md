@@ -189,7 +189,7 @@ E_i = E_{i-1} + \text{MHA}(\hat{E}_{i-1}, \hat{E}_{i-1}, \hat{E}_{i-1}),
 ```
 
 ```math
-E_i = E_i + \text{FFN}(\text{LayerNorm}(E_i)), \tag{3}
+E_i = E_i + \text{FFN}(\text{LayerNorm}(E_i))
 ```
 
 この式 (3) は、Transformerエンコーダの各層における処理を説明しています。各ステップを以下に詳しく説明します：
