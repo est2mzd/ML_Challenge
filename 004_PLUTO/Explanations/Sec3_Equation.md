@@ -256,7 +256,7 @@ Q_{\text{lat}} \in \mathbb{R}^{N_R \times D},
 まず、横方向クエリ $Q_{\text{lat}}$ に加えて、縦方向クエリ $Q_{\text{lon}}$ が使用されます。これらのクエリは、車両の縦方向の挙動（例えば、加速や減速）をエンコードするために利用されます。横方向クエリ $Q_{\text{lat}}$ と縦方向クエリ $Q_{\text{lon}}$ を結合し、次のようにクエリセット $Q_0$ が定義されます（数式 (4)）：
 
 ```math
-Q_0 = \text{Projection}(\text{concat}(Q_{\text{lat}}, Q_{\text{lon}})), \tag{4}
+Q_0 = \text{Projection}(\text{concat}(Q_{\text{lat}}, Q_{\text{lon}}))
 ```
 
 ここで、**Projection** は単純な線形層または多層パーセプトロン（MLP）を指します。この $Q_0$ は、各参照ラインの局所的な領域に関する情報のみを捉えています。
@@ -292,7 +292,7 @@ Q_0 = \text{Projection}(\text{concat}(Q_{\text{lat}}, Q_{\text{lon}})), \tag{4}
 
 - クエリ間のクロスアテンション機構（Query-to-Scene Cross-Attention）
 ```math
-Q_i = \text{CrossAttn}(\tilde{Q}_i, E_{\text{enc}}, E_{\text{enc}}), \tag{5}
+Q_i = \text{CrossAttn}(\tilde{Q}_i, E_{\text{enc}}, E_{\text{enc}})
 ```
 
 ここで、
@@ -303,7 +303,7 @@ Q_i = \text{CrossAttn}(\tilde{Q}_i, E_{\text{enc}}, E_{\text{enc}}), \tag{5}
 デコーダの最終出力 $Q_{\text{dec}}$ は、2つのMLP（多層パーセプトロン）を使用して自動運転車の将来の軌道点およびそれらの確率スコアを決定するために利用されます。これを数式 (6) で表すと次のようになります：
 
 ```math
-T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}}). \tag{6}
+T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}})
 ```
 
 ここで、
@@ -313,7 +313,7 @@ T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}}). \tag
 また、参照ラインが存在しないシナリオに対応するために、追加のMLPヘッドが導入され、自動運転車のエンコードされた特徴 $E'_{AV}$ から直接軌道をデコードします。これを数式 (7) で表すと次のようになります：
 
 ```math
-\tau^{\text{free}} = \text{MLP}(E'_{AV}). \tag{7}
+\tau^{\text{free}} = \text{MLP}(E'_{AV})
 ```
 
 #### 変数の説明
@@ -340,7 +340,7 @@ T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}}). \tag
 \mathcal{L}_{\text{reg}} = \text{L1}_{\text{smooth}}(\hat{\tau}, \tau^{\text{gt}}) + \text{L1}_{\text{smooth}}(\tau^{\text{free}}, \tau^{\text{gt}}),
 ```
 ```math
-\mathcal{L}_{\text{cls}} = \text{CrossEntropy}(\pi_0, \pi_0^*), \tag{8}
+\mathcal{L}_{\text{cls}} = \text{CrossEntropy}(\pi_0, \pi_0^*)
 ```
 
 ここで、
@@ -350,7 +350,7 @@ T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}}). \tag
 最終的な模倣損失 $\mathcal{L}_i$ は、これら2つの損失成分の和として次のように定義されます（数式 (9)）：
 
 ```math
-\mathcal{L}_i = \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{cls}}. \tag{9}
+\mathcal{L}_i = \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{cls}}
 ```
 
 #### 変数の説明
@@ -368,7 +368,7 @@ T_0 = \text{MLP}(Q_{\text{dec}}), \quad \pi_0 = \text{MLP}(Q_{\text{dec}}). \tag
 予測軌道は、動的エージェントの埋め込みベクトル $E'_A$ を入力として、単純な2層のMLP（多層パーセプトロン）を用いて生成されます。このプロセスは、次の数式 (10) によって表されます：
 
 ```math
-P_{1:\text{NA}} = \text{MLP}(E'_A), \tag{10}
+P_{1:\text{NA}} = \text{MLP}(E'_A)
 ```
 
 ここで、
@@ -380,7 +380,7 @@ P_{1:\text{NA}} = \text{MLP}(E'_A), \tag{10}
 次に、エージェントのGround Truthの軌道を $P^{\text{gt}}_{1:\text{NA}}$ として表します。予測損失は、このGround Truthの軌道と予測軌道との間のスムースL1損失として定義され、次の数式 (11) で表されます：
 
 ```math
-\mathcal{L}_p = \text{L1}_{\text{smooth}}(P_{1:\text{NA}}, P^{\text{gt}}_{1:\text{NA}}). \tag{11}
+\mathcal{L}_p = \text{L1}_{\text{smooth}}(P_{1:\text{NA}}, P^{\text{gt}}_{1:\text{NA}})
 ```
 
 ここで、
