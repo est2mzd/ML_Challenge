@@ -89,7 +89,7 @@ F_A \in \mathbb{R}^{N_A \times (T_H - 1) \times 8}
 - **$b^t_i$**: エージェントの検出境界ボックスの寸法。長さと幅で構成され、エージェントの物理的なサイズを示します。
 - **$\mathcal{I}^t_i$**: 観測フレームのバイナリインジケーター。このフレームが観測されたかどうかを示すフラグです。
 
-最終的に、Feature Pyramid Network (FPN) を使用してこれらの履歴特徴を抽出および圧縮し、次の次元を持つエージェント埋め込み $E_A$ を生成します：
+最終的に、[Feature Pyramid Network (FPN)](./Feature_Pyramid_Network.md) を使用してこれらの履歴特徴を抽出および圧縮し、次の次元を持つエージェント埋め込み $E_A$ を生成します：
 
 ```math
 E_A \in \mathbb{R}^{N_A \times D}
@@ -115,7 +115,7 @@ o_i = \left( p_i, \theta_i, b_i \right)
 F_O \in \mathbb{R}^{N_S \times 5}
 ```
 
-- 5は静的障害物の特徴ベクトルの次元（x, y, yaw, height, width）
+- 上式の"5"は、静的障害物の特徴ベクトルの次元（x, y, yaw, height, width）
 
 その後、2層の多層パーセプトロン (MLP) を使用して、静的物体の特徴をエンコードし、埋め込み $E_O$ を生成します。この埋め込みの次元は次のようになります：
 
