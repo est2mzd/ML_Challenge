@@ -1,0 +1,37 @@
+\[
+```math
+
+/]
+```
+
+注意機構
+Attention Mechanism
+
+地上真理
+Ground Truth
+
+
+添付PDFの添付画像の部分について、上記と同様の方法で説明してください
+
+下記の条件に基づいて回答してください
+１：日本語で回答
+２：回答は最後に、マークダウンコードでかき、README.mdに貼り付けられるようにしてください
+３：プログラムはpytorchで書いてください
+４：プログラムのコメントは、下記の条件に基づいて書いてください
+　　4-1：添付画像のブロック図　と　添付PDFの数式（1〜15） の　関係を記述してください
+
+
+添付PDFのうち、この添付画像の部分について、下記項目に回答してください
+Q1:ここは、論文の何章のどこを参照していますか？
+Q2:ここは、どのような役割を持っていますか？
+Q3:ここは、論文のどの数式を使っていますか？
+Q4：ここは、pytorchで書くとどうなりますか？
+Q5:Transformre Endcoder x Lenc　というブロックは、どういう役割を持っていますか
+Q6:Transformre Endcoder x Lenc　というブロックの上のブロックは、どういう役割を持っていますか
+
+Q7:Transformre Endcoder x Lenc　というブロックは、どの数式の処理になりますか？
+Q8:Transformre Endcoder x Lenc　というブロックの上のブロック、どの数式の処理になりますか？
+Q9:Transformre Endcoder x Lenc　というブロックの下のブロック、どの数式の処理になりますか？
+Q10:Transformre Endcoder x Lenc　というブロックの2個上のPredictionsブロック、どの数式の処理になりますか？
+
+Q11:Transformre Endcoder x Lenc　というブロックの下のブロック、埋め込み(E_AV, E_A, E_O, E_P)などは、どの数式処理になりますか？
