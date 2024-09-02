@@ -568,7 +568,7 @@ L_{\text{aux}} = \frac{1}{T_f} \sum_{t=1}^{T_f} \sum_{i=1}^{N_c} \max(0, R_c + \
 - $T^-$: ネガティブサンプルを生成するためのデータ拡張の集合。ここでは、信号機の状態反転がその一部です。
 
 <br>
-
+<a id="section-36"></a>
 ### 3.6 Planning and Post-processing
 
 ### 計画と後処理( Planning and Post-processing )
