@@ -4,7 +4,7 @@
  - 動的物標 = エージェント or agent
 
 ## PLUTOのアーキテクチャ
-![代替テキスト](../Images/fig_01.png)
+![代替テキスト](../Images/fig_01_with_loss.png)
 
 ## 3.1 Problem Formulation( 問題定式化 )
 
@@ -569,6 +569,7 @@ L_{\text{aux}} = \frac{1}{T_f} \sum_{t=1}^{T_f} \sum_{i=1}^{N_c} \max(0, R_c + \
 
 <br>
 <a id="section-36"></a>
+
 ### 3.6 Planning and Post-processing
 
 ### 計画と後処理( Planning and Post-processing )
