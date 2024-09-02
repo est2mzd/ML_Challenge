@@ -37,6 +37,6 @@
      L = w_1 L_i + w_2 L_p + w_3 L_{\text{aux}} + w_4 L_c
      ```
 
-### 推論時の損失関数
+### 推論時の評価関数
 
-[Sec3_Equation.md の 3.6](./Sec3_Equation.md#section-36)　を参照してください
+[Sec3_Equation.md の 3.6](./Sec3_Equation.md#section-36) を参照してください
