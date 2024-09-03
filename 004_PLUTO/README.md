@@ -102,7 +102,7 @@ PLUTOの各コンポーネントの影響を分析するためのアブレーシ
 - 4. 損失とスコア計算。最適軌道の選択。（上段が fig-01. 下段が解説部分の拡大図）
 ![fig_01_eq_04](./Images/fig_01_and_eq_04.png)
 
-- 式(7)以降は損失計算がメイン。下記を参照。
+- 式(8)以降は損失計算がメイン。下記を参照。
   - [全数式の詳細](./Explanations/Sec3_Equation.md)
   - [損失の説明](./Explanations/PLUT_Loss_Funcs.md)
 
