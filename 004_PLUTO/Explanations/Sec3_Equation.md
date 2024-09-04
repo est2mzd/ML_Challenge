@@ -300,7 +300,7 @@ Q_{\text{lon}} \in \mathbb{R}^{N_L \times D}
 
 ---
 
-#### 補足: [$Q_{\text{lon}}$ と $Q_{\text{lat}}$](./Q_lon.md)について
+#### 補足: [ $Q_{\text{lon}}$ と $Q_{\text{lat}}$ ](./Qlon_Qlat.md)について
 
 ---
 
