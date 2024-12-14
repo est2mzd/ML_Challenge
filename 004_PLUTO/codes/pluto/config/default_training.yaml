@@ -1,6 +1,22 @@
+#------------------------------------------------------------#
+# hydra: の役割
+# 目的:
+#  - Hydra 自身の動作を制御するための設定。
+#  - 実行環境、検索パス、出力ディレクトリ、ジョブ管理など、Hydraの内部挙動を制御します。
+#
+# 主な項目:
+#  - run:
+#    - 実行時の設定（例: 実行結果を保存するディレクトリ）。
+#  - output_subdir:
+#    - 実行結果を保存するサブディレクトリのパターン。
+#  - sweep:
+#    - ハイパーパラメータ探索（スイープ）時の挙動を制御。
+#  - searchpath:
+#    - 設定ファイルを検索する追加パス。
+#------------------------------------------------------------#
 hydra:
   run:
-    dir: ${output_dir}
+    dir: ${output_dir} # ここでは未定義だが、後で, default_experiment.yamlで 設定されるため、ここにも反映される. 
   output_subdir: ${output_dir}/code/hydra           # Store hydra's config breakdown here for debugging
   searchpath:                                       # Only <exp_dir> in these paths are discoverable
     - pkg://nuplan.planning.script.config.common
@@ -8,10 +24,20 @@ hydra:
     - pkg://nuplan.planning.script.experiments      # Put experiments configs in script/experiments/<exp_dir>
     - config/training
 
-
+#-------------------------------------------------------------#
+# defaults: の役割
+# 目的:
+#  - Hydraの設定ファイルの読み込み順序と依存関係を定義。
+#  - どの設定ファイルを組み合わせて最終的な設定 (cfg) を構築するかを指定。
+#
+# 主な項目:
+#  - 他の設定ファイルを順序に従って読み込み。
+#  - 設定のデフォルト値や依存関係を記述。
+#  - 設定の階層を動的に構築。
+#-------------------------------------------------------------#
 defaults:
-  - default_experiment
-  - default_common
+  - default_experiment # パス = ./nuplan-devkit/nuplan/planning/script/config/common/default_experiment.yaml
+  - default_common     # パス = ./nuplan-devkit/nuplan/planning/script/config/common/default_common.yaml
 
   # Trainer and callbacks
   - lightning: custom_lightning

@@ -42,35 +42,46 @@ logger = logging.getLogger(__name__)
 
 def update_config_for_training(cfg: DictConfig) -> None:
     """
-    Updates the config based on some conditions.
-    :param cfg: omegaconf dictionary that is used to run the experiment.
+    実験用設定を条件に基づいて更新する関数。
+    :param cfg: 実験に使用されるOmegaConf形式の辞書（設定データ）。
     """
-    # Make the configuration editable.
+    # 設定を一時的に編集可能にする。
+    # OmegaConf は、設定管理を効率化するために設計されたオープンソースのPythonライブラリです。
+    # 柔軟性と強力な機能を提供し、特に階層的な設定、動的な値の参照や上書き、型安全性を必要とするプロジェクトでよく利用されます。
+    # Hydraライブラリの中核としても使われています。
     OmegaConf.set_struct(cfg, False)
 
+    # キャッシュパスが設定されていない場合の警告ログ出力
     if cfg.cache.cache_path is None:
         logger.warning("Parameter cache_path is not set, caching is disabled")
     else:
+        # キャッシュパスがS3以外の場合にローカルディレクトリを管理
         if not str(cfg.cache.cache_path).startswith("s3://"):
+            # キャッシュ削除が有効で、ディレクトリが存在する場合、削除
             if cfg.cache.cleanup_cache and Path(cfg.cache.cache_path).exists():
                 rmtree(cfg.cache.cache_path)
 
+            # キャッシュディレクトリを作成（必要な場合に親ディレクトリも作成）
             Path(cfg.cache.cache_path).mkdir(parents=True, exist_ok=True)
 
+    # オーバーフィット設定が有効な場合、データローダーのワーカー数を0に設定
     if cfg.lightning.trainer.overfitting.enable:
         cfg.data_loader.params.num_workers = 0
 
+    # 設定内の変数参照や値を解決（例: ${env:HOME} のような設定を展開）。
     OmegaConf.resolve(cfg)
 
-    # Finalize the configuration and make it non-editable.
+    # 設定を再度編集不可にする（構造を固定化）。
     OmegaConf.set_struct(cfg, True)
 
-    # Log the final configuration after all overrides, interpolations and updates.
+    # 設定の最終内容をログに記録（必要に応じてログ出力）
     if cfg.log_config:
         logger.info(
             f"Creating experiment name [{cfg.experiment}] in group [{cfg.group}] with config..."
         )
+        # 設定内容をYAML形式でログに出力
         logger.info("\n" + OmegaConf.to_yaml(cfg))
+
 
 
 @dataclass(frozen=True)

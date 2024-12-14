@@ -14,13 +14,21 @@ logger = logging.getLogger(__name__)
 
 def build_training_experiment_folder(cfg: DictConfig) -> None:
     """
-    Builds the main experiment folder for training.
-    :param cfg: DictConfig. Configuration that is used to run the experiment.
+    トレーニング用のメイン実験フォルダを作成する関数。
+    :param cfg: DictConfig. 実験を実行するための設定データ。
     """
+    # 実験フォルダの作成開始をログに記録
     logger.info('Building experiment folders...')
+
+    # 実験フォルダのパスを設定ファイルから取得し、Pathオブジェクトに変換
     main_exp_folder = pathlib.Path(cfg.output_dir)
+
+    # 実験フォルダのパスをログに記録
     logger.info(f'Experimental folder: {main_exp_folder}')
+
+    # 実験フォルダを作成（親ディレクトリも作成可能）。既に存在していてもエラーにしない
     main_exp_folder.mkdir(parents=True, exist_ok=True)
+
 
 
 def build_simulation_experiment_folder(cfg: DictConfig) -> str:

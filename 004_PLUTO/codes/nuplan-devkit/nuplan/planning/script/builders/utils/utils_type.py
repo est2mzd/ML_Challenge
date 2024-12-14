@@ -19,6 +19,11 @@ def is_target_type(cfg: DictConfig, target_type: Union[Type[Any], Callable[..., 
     :param cfg: config
     :param target_type: Type or callable to check against.
     :return: Whether cfg._target_ matches the target_type.
+    
+    この関数は、Hydraの設定 (cfg) に含まれる _target_ が、指定された型や関数(target_type)と一致するかどうかを確認します。
+    戻り値:
+        一致する場合: True
+        一致しない場合: False    
     """
     return bool(_locate(cfg._target_) == target_type)
 
@@ -28,6 +33,9 @@ def validate_type(instantiated_class: Any, desired_type: Type[Any]) -> None:
     Validate that constructed type is indeed the desired one
     :param instantiated_class: class that was created
     :param desired_type: type that the created class should have
+    
+    この関数は、インスタンス化されたオブジェクト(instantiated_class)が、指定された型(desired_type)と一致することを検証します。
+    一致しない場合は例外(AssertionError)をスローします。
     """
     assert isinstance(
         instantiated_class, desired_type

@@ -1,5 +1,6 @@
 # 基本となるイメージを選択
-FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+#FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+FROM  nvidia/cuda:12.6.3-base-ubuntu22.04
 
 # 非対話型設定
 ENV DEBIAN_FRONTEND=noninteractive
