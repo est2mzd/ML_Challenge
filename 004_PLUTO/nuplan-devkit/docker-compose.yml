@@ -1,0 +1,48 @@
+#version: "3.7"  # Docker Composeのバージョン指定
+
+x-nuplan-volumes: &x-nuplan-volumes  # nuPlan用のデータと実験ディレクトリをマウントする共通設定
+  volumes:
+    - "$NUPLAN_DATA_ROOT:/data/sets/nuplan:rw"  # ホストのデータディレクトリをコンテナのnuPlanデータディレクトリにマウント（読み書き可能）
+    - "$NUPLAN_EXP_ROOT:/data/exp/nuplan:rw"  # ホストの実験ディレクトリをコンテナのnuPlan実験ディレクトリにマウント（読み書き可能）
+
+x-nuplan-maps: &x-nuplan-maps  # nuPlan用のマップデータディレクトリをマウントする共通設定
+  volumes:
+    - "$NUPLAN_MAPS_ROOT:/data/sets/nuplan/maps:rw"  # ホストのマップデータディレクトリをコンテナのnuPlanマップディレクトリにマウント（読み書き可能）
+
+services:  # サービス定義セクション
+  submission:  # "submission"サービスの定義
+    <<: *x-nuplan-maps  # "x-nuplan-maps"で定義された共通ボリューム設定を継承
+    image: ${SUBMISSION_IMAGE}  # 環境変数で指定されたDockerイメージ名
+    container_name: "nuplan_sub_${USER}"
+    build:
+      context: ./  # Dockerfileのビルドコンテキスト（カレントディレクトリ）
+      dockerfile: Dockerfile.submission  # "submission"サービス用のDockerfile
+    env_file:
+      - .env  # 環境変数を定義した.envファイルを読み込む
+    network_mode: "host"  # ホストネットワークモードを使用
+    tty: true  # TTY（擬似端末）を有効化
+    deploy:
+      resources:
+        reservations:  # 必要リソースの予約
+          devices:
+            - driver: nvidia  # NVIDIA GPUドライバを使用
+              count: 1  # 必要なGPUの数
+              capabilities: ["gpu"]  # GPUの利用能力を指定
+    entrypoint: /nuplan_devkit/nuplan/entrypoint_submission.sh  # コンテナのエントリポイントスクリプト
+
+  simulation:  # "simulation"サービスの定義
+    <<: *x-nuplan-volumes  # "x-nuplan-volumes"で定義された共通ボリューム設定を継承
+    image: ${SIMULATION_IMAGE}  # 環境変数で指定されたDockerイメージ名
+    container_name: "nuplan_sim_${USER}"
+    build:
+      context: ./  # Dockerfileのビルドコンテキスト（カレントディレクトリ）
+      dockerfile: Dockerfile  # "simulation"サービス用のDockerfile
+    env_file:
+      - .env  # 環境変数を定義した.envファイルを読み込む
+    environment:
+      'NUPLAN_CHALLENGE': $NUPLAN_CHALLENGE  # nuPlanチャレンジに関連する環境変数
+      'NUPLAN_PLANNER': $NUPLAN_PLANNER  # nuPlanプランナーに関連する環境変数
+    network_mode: "host"  # ホストネットワークモードを使用
+    depends_on:  # このサービスが開始される前に依存するサービス
+      - submission  # "submission"サービスに依存
+    entrypoint: /nuplan_devkit/nuplan/entrypoint_simulation.sh  # コンテナのエントリポイントスクリプト

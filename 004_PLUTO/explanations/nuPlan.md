@@ -36,4 +36,4 @@ nuPlanには、より小さなバージョンである「nuPlan mini」もあり
 
 詳細な手順や最新情報については、[nuPlanの公式ドキュメント](https://www.nuplan.org/)やサポートページを参照してください&#8203;:citation[oaicite:2]{index=2}&#8203;&#8203;:citation[oaicite:1]{index=1}&#8203;&#8203;:citation[oaicite:0]{index=0}&#8203;。
 
-![Fact Sheet](../Images/nuPlan_Dataset_v1.0.png)
+![Fact Sheet](../images/nuPlan_Dataset_v1.0.png)

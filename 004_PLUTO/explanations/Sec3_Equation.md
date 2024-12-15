@@ -4,7 +4,7 @@
  - 動的物標 = エージェント or agent
 
 ## PLUTOのアーキテクチャ
-![代替テキスト](../Images/fig_01_with_loss.png)
+![代替テキスト](../images/fig_01_with_loss.png)
 
 ## 3.1 Problem Formulation( 問題定式化 )
 
@@ -501,7 +501,7 @@ L_{\text{aux}} = \frac{1}{T_f} \sum_{t=1}^{T_f} \sum_{i=1}^{N_c} \max(0, R_c + \
 #### 補助損失の一部である"走行可能エリア損失( Drivable Area Loss )"の計算
 - [補足](./Drivable_Area_Loss.md)
 
-![algorithm-1](../Images/algorithm_01.png)
+![algorithm-1](../images/algorithm_01.png)
 
 <br>
 
@@ -555,7 +555,7 @@ L_{\text{aux}} = \frac{1}{T_f} \sum_{t=1}^{T_f} \sum_{i=1}^{N_c} \max(0, R_c + \
 <br>
 
 ### 3.5.1. Data augmentations
-![fig-4](../Images/fig_04.png)
+![fig-4](../images/fig_04.png)
 
 この節では、対照学習において重要な役割を果たすデータ拡張( Data Augmentation )について説明しています。データ拡張は、トレーニングデータを人工的に増やし、モデルの汎化性能を向上させるための技術です。この文脈では、従来の摂動ベースの拡張手法が多く使用されている一方で、代替の拡張戦略が十分に探求されていないことを指摘し、対照学習のタスクに合わせた6つの拡張関数を提案しています。
 
