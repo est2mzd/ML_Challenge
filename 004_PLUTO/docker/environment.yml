@@ -1,0 +1,14 @@
+# このファイルは、Dockerfile で読み込まれる
+# Conda環境をrequirementsに基づいて構築
+# RUN PIP_EXISTS_ACTION=w conda env create -f ./environment.yml
+# 環境名 = nuplan となる
+name: nuplan
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip=21.2.4
+  - nb_conda_kernels
+  - pip:
+    - -r requirements_torch.txt
+    - -r requirements.txt

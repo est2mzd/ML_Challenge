@@ -1,0 +1,33 @@
+# Common variables
+export NUPLAN_TEST_MAPS_VERSION="nuplan-maps-v1.0"
+export NUPLAN_DATA_STORE='local'
+# Simulation variables
+export SIMULATION_CONTAINER_PORT=50050
+export SIMULATION_IMAGE="nuplan/nuplan"
+
+# Submission variables
+export SUBMISSION_CONTAINER_PORT=50051
+export CONTESTANT_ID="test"
+export SUBMISSION_ID="contestant"
+
+export SUBMISSION_IMAGE="nuplan/test-submission"
+
+# Variable only used on evaluations
+export SCENARIO_FILTER_ID=
+
+# Added by koba
+export NUPLAN_DATA_ROOT=${HOME}/ml_challenge/004_PLUTO/data/data/
+export NUPLAN_EXP_ROOT=${HOME}/ml_challenge/004_PLUTO/data/exp/
+export NUPLAN_MAPS_ROOT=${HOME}/ml_challenge/004_PLUTO/data/maps/
+export NUPLAN_CHALLENGE=${HOME}/ml_challenge/004_PLUTO/data/challenge/
+export NUPLAN_PLANNER="[remote_planner]"
+
+# Added by koba
+export IMAGE_NAME="nuplan"
+export CONTAINER_NAME="nuplan/pluto"
+export USERNAME=$(whoami)
+export USERID=$(id -u)
+#
+export WORKDIR={HOME}/ml_challenge/004_PLUTO
+export NUPLAN_DEVKIT_ROOT=${HOME}/ml_challenge/004_PLUTO/nuplan-devkit
+export PLUTO_ROOT=${HOME}/ml_challenge/004_PLUTO/pluto

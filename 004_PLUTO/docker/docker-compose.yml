@@ -1,0 +1,28 @@
+version: "3.7"  # Docker Composeのバージョン指定
+
+services:  # サービス定義セクション
+  simulation:  # "simulation"サービスの定義
+    image: ${IMAGE_NAME}  # 環境変数で指定されたDockerイメージ名
+    container_name: ${CONTAINER_NAME}  # コンテナ名にユーザー名を含む
+    build:  # Dockerfileのビルド設定
+      context: ./  # Dockerfileのビルドコンテキスト（カレントディレクトリ）
+      dockerfile: Dockerfile  # "simulation"サービス用のDockerfileを指定
+    env_file:  # 環境変数を定義した.envファイルを読み込む
+      - .env
+    environment:  # 環境変数の定義
+      'NUPLAN_CHALLENGE': $NUPLAN_CHALLENGE  # nuPlanチャレンジ関連
+      'NUPLAN_PLANNER': $NUPLAN_PLANNER  # nuPlanプランナー関連
+    volumes:  # ホストのディレクトリをコンテナ内にマウント
+      - "$NUPLAN_DATA_ROOT:/data/sets/nuplan:rw"  # nuPlanデータ用
+      - "$NUPLAN_EXP_ROOT:/data/exp/nuplan:rw"  # 実験データ用
+      - "$NUPLAN_MAPS_ROOT:/data/sets/nuplan/maps:rw"  # マップデータ用
+    network_mode: "host"  # ホストネットワークモードを使用
+    tty: true  # TTY（擬似端末）を有効化
+    deploy:
+      resources:  # 必要リソースの予約設定
+        reservations:
+          devices:
+            - driver: nvidia  # NVIDIA GPUドライバを使用
+              count: 1  # 必要なGPUの数
+              capabilities: ["gpu"]  # GPUの利用能力を指定      
+    entrypoint: /bin/bash

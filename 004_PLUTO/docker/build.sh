@@ -1,14 +1,11 @@
 #!/bin/bash
+set -e
 
-# common.shを読み込む
-source "$(dirname "$0")/common.sh"
+source .env
+SERVICE_NAME=simulation
 
-# ホストのユーザー名とユーザーIDを取得
-USERNAME=$(whoami)
-USERID=$(id -u)
+docker compose build ${SERVICE_NAME}
 
-# Dockerイメージをビルド
-docker build \
-    --build-arg USERNAME=$USERNAME \
-    --build-arg USERID=$USERID \
-    -t "$IMAGE_NAME" "$DOCKERFILE_DIR"
+sleep 0.5
+echo "==========================================="
+docker ps -a
