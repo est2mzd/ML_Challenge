@@ -1,0 +1,38 @@
+2025-02-19 02:44:05.814 [info] [Info  - 2:44:05 AM] (2162) Server root directory: file:///home/takuya/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-02-19 02:44:05.815 [info] [Info  - 2:44:05 AM] (2162) Pylance language server 2025.2.1 (pyright version 1.1.393, commit 3763156f) starting
+2025-02-19 02:44:05.815 [info] [Info  - 2:44:05 AM] (2162) Starting service instance "takuya"
+2025-02-19 02:44:05.852 [info] [Info  - 2:44:05 AM] (2162) Setting environmentName for service "takuya": "3.10.12 (global)"
+2025-02-19 02:44:05.852 [info] [Info  - 2:44:05 AM] (2162) Setting pythonPath for service "takuya": "/bin/python3"
+2025-02-19 02:44:05.852 [info] [Info  - 2:44:05 AM] (2162) No include entries specified; assuming /home/takuya
+2025-02-19 02:44:05.854 [info] [Info  - 2:44:05 AM] (2162) Auto-excluding **/node_modules
+2025-02-19 02:44:05.854 [info] [Info  - 2:44:05 AM] (2162) Auto-excluding **/__pycache__
+2025-02-19 02:44:05.854 [info] [Info  - 2:44:05 AM] (2162) Auto-excluding **/.*
+2025-02-19 02:44:05.873 [info] [Info  - 2:44:05 AM] (2162) Assuming Python version 3.10.12.final.0
+2025-02-19 02:44:05.930 [info] [Info  - 2:44:05 AM] (2162) Found 1 source file
+2025-02-19 02:44:06.196 [info] [Info  - 2:44:06 AM] (2162) Background analysis(1) root directory: file:///home/takuya/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-02-19 02:44:06.197 [info] [Info  - 2:44:06 AM] (2162) Background analysis(1) started
+2025-02-19 02:44:06.264 [info] [Info  - 2:44:06 AM] (2162) Indexer background runner(2) root directory: file:///home/takuya/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (index)
+2025-02-19 02:44:06.264 [info] [Info  - 2:44:06 AM] (2162) Indexing(2) started
+2025-02-19 02:44:06.580 [info] [Info  - 2:44:06 AM] (2162) scanned(2) 225 files over 1 exec env
+2025-02-19 02:44:08.091 [info] [Info  - 2:44:08 AM] (2162) indexed(2) 225 files over 1 exec env
+2025-02-19 02:44:08.138 [info] [Info  - 2:44:08 AM] (2162) Indexing finished(2).
+2025-02-19 02:44:15.848 [info] (Client) The existing extension didn't exit within 10 seconds. New instance will start, but you might encounter issues.
+2025-02-19 02:44:15.848 [info] (Client) Pylance async client (2025.2.1) started with python extension (2025.0.0)
+2025-02-19 02:45:23.753 [info] [Info  - 2:45:23 AM] (2162) Setting environmentName for service "takuya": "3.10.12 (global)"
+2025-02-19 02:45:23.753 [info] [Info  - 2:45:23 AM] (2162) Setting pythonPath for service "takuya": "/bin/python3"
+2025-02-19 02:45:23.753 [info] [Info  - 2:45:23 AM] (2162) No include entries specified; assuming /home/takuya
+2025-02-19 02:45:23.755 [info] [Info  - 2:45:23 AM] (2162) Auto-excluding **/node_modules
+2025-02-19 02:45:23.755 [info] [Info  - 2:45:23 AM] (2162) Auto-excluding **/__pycache__
+2025-02-19 02:45:23.755 [info] [Info  - 2:45:23 AM] (2162) Auto-excluding **/.*
+2025-02-19 02:45:23.772 [info] [Info  - 2:45:23 AM] (2162) Assuming Python version 3.10.12.final.0
+2025-02-19 02:45:23.817 [info] [Info  - 2:45:23 AM] (2162) Found 1 source file
+2025-02-19 02:45:24.189 [info] [Info  - 2:45:24 AM] (2162) Indexer background runner(3) root directory: file:///home/takuya/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (index)
+2025-02-19 02:45:24.189 [info] [Info  - 2:45:24 AM] (2162) Indexing(3) started
+2025-02-19 02:45:24.433 [info] [Info  - 2:45:24 AM] (2162) scanned(3) 225 files over 1 exec env
+2025-02-19 02:45:24.591 [info] [Info  - 2:45:24 AM] (2162) indexed(3) 225 files over 1 exec env
+2025-02-19 02:45:24.636 [info] [Info  - 2:45:24 AM] (2162) Indexing finished(3).
+2025-02-19 02:47:18.177 [info] [Info  - 2:47:18 AM] (2162) Found 2 source files
+2025-02-19 02:47:24.602 [info] [Info  - 2:47:24 AM] (2162) Found 2 source files
+2025-02-19 02:52:22.736 [info] [Info  - 2:52:22 AM] (2162) Found 3 source files
+2025-02-19 02:52:31.171 [info] [Info  - 2:52:31 AM] (2162) Found 2 source files
+2025-02-19 02:52:35.412 [info] [Info  - 2:52:35 AM] (2162) Found 2 source files
